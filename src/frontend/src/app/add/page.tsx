@@ -21,7 +21,7 @@ export default function Add() {
     const endDateIso = new Date(endDate).toISOString();
 
     const currEvent: Event = {
-      id: 0,
+      id: "0",
       event,
       category,
       totalHours,
