@@ -1,9 +1,24 @@
-import { getEvents, Event } from "@/services/events";
+"use client";
 
-export default async function Home() {
-  const response = await getEvents();
-  const events: Event[] = response.events;
-  const totalHours = events.reduce((acc, curr) => acc + curr.totalHours, 0);
+import { getEvents, Event } from "@/services/events";
+import { useEffect, useState } from "react";
+
+export default function Home() {
+  const [events, setEvents] = useState<Event[]>([]);
+  const [totalHours, setTotalHours] = useState(0);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      const response = await getEvents();
+      setEvents(response.events);
+      const newTotalHours = response.events.reduce(
+        (acc: number, curr: Event) => acc + curr.totalHours,
+        0
+      );
+      setTotalHours(newTotalHours);
+    };
+    fetchEvents();
+  }, []);
   return (
     <main>
       <div className="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8">

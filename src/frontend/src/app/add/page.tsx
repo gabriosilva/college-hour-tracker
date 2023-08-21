@@ -27,6 +27,8 @@ export default function Add() {
       totalHours,
       startDate: startDateIso,
       endDate: endDateIso,
+      createdAt: "",
+      updatedAt: "",
     };
 
     try {
