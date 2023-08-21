@@ -35,6 +35,9 @@ src
 - [TailwindCSS](https://tailwindcss.com/)
 - [Axios](https://axios-http.com/)
 
+## Demonstration Video
+Drive video: https://drive.google.com/file/d/15AojJqANK0aD0my29mEb6so5uf6mwXyE/view?usp=sharing
+
 ## Installation
 1. Clone the repository `git clone https://github.com/gabriosilva/college-hour-tracker`
 2. `cd ./college-hour-tracker`
